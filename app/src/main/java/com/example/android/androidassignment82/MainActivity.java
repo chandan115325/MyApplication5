@@ -19,11 +19,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        // Using Hashset to remove the duplicate data
         HashSet<Contact>setContacts = new HashSet<>();
         for(int i =0; i<mContactNames.length && i< mContactNumbers.length; i++){
             setContacts.add(new Contact(mContactNames[i],mContactNumbers[i]));
         }
+        // Casting Hashset to ArrayList
         ArrayList<Contact> listContact = new ArrayList<Contact>(setContacts);
         //sort mCntactNames by using Comparator by Name
         Collections.sort(listContact, Contact.NameComparator);
